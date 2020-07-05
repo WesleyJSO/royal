@@ -1,0 +1,10 @@
+
+header {
+  height: 25px;
+  display: flex;
+  padding: 20px;
+  color: white;
+  background-color: rgba(16, 38, 102, 1);
+  /* background: linear-gradient(0.25turn, rgba(65, 105, 225, 1), rgba(39, 154, 241, 1), rgba(65, 105, 225, 1)); */
+  /* box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25); */
+}

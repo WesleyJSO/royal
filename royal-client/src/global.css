@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+
+*	{
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+  height: 100vh;
+	width: 100%;
+}
+
+li {	
+  list-style-type: none;
+}
+
+hr {
+	margin: 10px 0px 20px 0px;
+	height: 1px;
+	border-width: 0;
+	color: gray;
+	background-color: rgba(0, 0, 0, 0.1)
+}
+
+body {
+	font: rgba(31, 10, 10, 1);
+	font: 400 14px Montserrat, sans-serif;
+	-webkit-font-smothing: antialiased;
+	background-color: rgba(237, 236, 235, 1);
+}
+
+input, textarea {
+  transition: all 0.2s ease;
+}
+
+input:hover, textarea:hover {
+	border: 1px solid rgba(39, 154, 241, 1);
+}
+
+input:focus {
+	border: 1px solid rgba(65, 105, 225, 1);
+	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+input {
+	width: 95%;
+	margin: 3px 8px 8px 0px;
+	padding: 8px 0px 8px 8px;
+	color: #333;
+	border-radius: 2px;
+	border: 1px solid #dcdce6;
+}
+
+button {
+	margin: 5px;
+	cursor: pointer;
+	padding: 8px 15px;
+	border-radius: 2px;
+	border: 1px solid #dcdce6;
+	transition: all 0.1 ease;
+	text-transform: uppercase;
+	color: rgba(237, 236, 235, 1);
+	box-shadow: 0px 0px 10px 2px;
+}
+
+button:hover {
+	background-color: rgba(65, 105, 225, 1);
+}
+
+button:active {
+	transform: scale(0.99);
+	box-shadow: 0px 0px 5px 1px;
+}
+label {
+	margin: 5px 0px;
+}
+.card {
+	flex-grow: 1;
+	margin: 15px;
+	padding: 15px;
+	border-radius: 2px;
+	width: fit-content;
+	background-color: #fdfdfd;
+	box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2)
+}
+
+.no-margin-left {
+	margin: 5px 5px 5px 0px;
+}
+.no-margin-right {
+	margin: 5px 0px 5px 5px;
+}
+.align-right {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.btn-info {
+	background-color: rgba(16, 38, 102, 1);
+}
+
+.field {
+	width: 100%;
+	margin: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+table {
+	width: 90%;
+	margin: 20px;
+	border-collapse: collapse;
+	background-color: #fdfdfd;
+}
+thead {
+	text-align: center;
+}
+tbody {
+	text-align: left;
+}
+th, td {
+	padding: 10px;
+}
+th {
+	border-bottom: 1px solid white;
+	background-color: rgb(16, 38, 102);
+	color: rgb(237, 236, 235);
+}
+tr:nth-child(odd) {
+	background-color: rgba(227, 225, 222, 1);
+}
+tr:nth-child(even) {
+	background-color: white;
+}
+
+tr {	
+	transition: all 0.1s ease;
+}
+tr:hover {
+	background-color: rgb(16, 38, 102);
+	color: rgb(237, 236, 235);
+}

@@ -1,0 +1,15 @@
+.form-group {
+  display: flex;
+}
+
+.header {
+  padding: 5px;
+	text-transform: uppercase;
+  font: 600 14px Montserrat, sans-serif;
+  background-color: rgba(237, 236, 235, 1);
+}
+
+.border {
+  margin: 5px 0px 15px 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}

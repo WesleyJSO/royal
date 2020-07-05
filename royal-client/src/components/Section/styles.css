@@ -1,0 +1,32 @@
+section, nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+section {
+  max-width: fit-content;
+}
+nav {
+  float: left;
+  width: 180px;
+  background: rgba(227, 225, 222, 1);
+  /* box-shadow: 1px 1px 5px 0px rgba(75, 82, 103, 1); */
+  
+}
+.link, .link-active {
+  border-top: 1px solid rgba(227, 225, 222);
+  white-space: nowrap;
+  color: rgba(31, 10, 10, 1);
+  padding: 5px 40px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.link-active {
+  color: rgba(227, 225, 222);
+  background-color: rgb(16, 38, 102);
+}
+.link:hover {
+  color: rgba(227, 225, 222);
+  background-color: rgb(16, 38, 102);
+}
