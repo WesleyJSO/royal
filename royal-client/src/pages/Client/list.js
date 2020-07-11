@@ -1,31 +1,61 @@
-import React from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
+import api from '../../services'
+
 import './styles.css'
 
 export default function ClientList() {
 
   const history = useHistory()
+  
+  const [disabled, setDisabled] = useState(true)
 
-  const handleClick = event => {
+  const [clients, setClients] = useState([])
+  const [name, setName] = useState(``)
+  const [cpf, setCpf] = useState(``)
+  const [cardnumber, setCardnumber] = useState(``)
+  const [status, setStatus] = useState(``)
+
+  const handleNameChange = event => setName(event.target.value)
+  const handleCpfChange = event => setCpf(event.target.value)
+  const handleCardnumberChange = event => setCardnumber(event.target.value)
+  const handleStatusChange = event => setStatus(event.target.value)
+
+  useEffect(() => {
+    async function fetchData() {
+      const clients = await api.get(`cliente`)
+      setClients(clients.data)
+    }
+    fetchData()
+  }, [])
+
+  const handleTableDoubleClick = event => {
+    event.preventDefault()
+    // TODO enviar também os dados (id para nova consulta) do cliente para edição
+    history.push('/cadastro-cliente')
+  }
+  const handleButtonClick = event => {
     event.preventDefault()
     history.push('/cadastro-cliente')
   }
 
-  const handleKeyUp = () => {
-    const tds = [...document.getElementsByTagName("td")]
-    const inputs = [...document.getElementsByTagName('input')]
-      .filter(input => input.value)
-    
-      inputs.forEach(input => {
-        tds
-          .filter(td => td.classList[0] ===input.id)
-          .forEach(td => {
-            const text = (td.textContent || td.innerText).toUpperCase()
-            text.indexOf(input.value.toUpperCase()) >= 0
-            ? td.parentElement.style.display = ''
-            : td.parentElement.style.display = 'none'
-        })
-    })
+  const handleKeyUp = event => {
+    const tds = [...document.getElementsByTagName(`td`)]
+    const inputs = [...document.getElementsByTagName(`input`)].filter(input => input.value)
+    if(inputs.length === 0) {
+      tds.forEach(td => td.parentElement.style.display = ``)
+    } else {
+      inputs.forEach(input => tds.filter(td => td.classList[0] === input.id)
+          .forEach(td => td.textContent.toUpperCase().indexOf(input.value.toUpperCase()) >= 0
+            ? td.parentElement.style.display = ``
+            : td.parentElement.style.display = `none`
+        )
+      )
+    }
+    const trs = [...document.querySelectorAll(`tbody tr`)]
+    trs.length === trs.filter(tr => tr.style.display === `none`).length
+      ? setDisabled(false)
+      : setDisabled(true)
   }
 
   return (
@@ -38,28 +68,52 @@ export default function ClientList() {
               <div className="form-group">
                 <div className="field">
                   <label htmlFor="name">Nome</label>
-                  <input id="name" onKeyUp={handleKeyUp} />
+                  <input 
+                    id="name" 
+                    value={name} 
+                    onChange={handleNameChange} 
+                    onKeyUp={handleKeyUp} 
+                  />
                 </div>
                 <div className="field">
                   <label htmlFor="cpf">CPF</label>
-                  <input id="cpf" onKeyUp={handleKeyUp} />
+                  <input 
+                    id="cpf" 
+                    value={cpf}
+                    onChange={handleCpfChange}
+                    onKeyUp={handleKeyUp}
+                  />
                 </div>
                 <div className="field">
-                  <label htmlFor="cardNumber">Número do Cartão</label>
-                  <input id="cardNumber" onKeyUp={handleKeyUp} />
+                  <label htmlFor="cardnumber">Número do Cartão</label>
+                  <input 
+                    id="cardnumber" 
+                    value={cardnumber}
+                    onChange={handleCardnumberChange}
+                    onKeyUp={handleKeyUp}
+                  />
                 </div>
                 <div className="field">
                   <label htmlFor="status">Status</label>
-                  <input id="status" onKeyUp={handleKeyUp} />
+                  <input 
+                    id="status" 
+                    value={status}
+                    onChange={handleStatusChange}
+                    onKeyUp={handleKeyUp}
+                  />
                 </div>
               </div>
               </div>
               <div className="align-right">
-                <button className="btn-info no-margin-right" onClick={handleClick}>Novo</button>
+                <button 
+                  className="btn-info no-margin-right" 
+                  disabled={disabled}
+                  onClick={handleButtonClick}>
+                    Novo
+                </button>
               </div>
         </form>
       </div>
-      {/* <div class="table"> */}
         <table>
           <thead>
             <tr>
@@ -73,157 +127,35 @@ export default function ClientList() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="name">jose</td>
-              <td className="birthDate">maria</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">maria jose</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">maria jose</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">maria jose</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">maria cintia</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">cintia maria</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">jfalkfçdj</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">jfalkfçdj</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">jfalkfçdj</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">jfalkfçdj</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">jfalkfçdj</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">jfalkfçdj</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">jfalkfçdj</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">jfalkfçdj</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">jfalkfçdj</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">jfalkfçdj</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
-            <tr>
-              <td className="name">jfalkfçdj</td>
-              <td className="birthDate">jfalkfçdj</td>
-              <td className="cpf">jfalkfçdj</td>
-              <td className="phone">jfalkfçdj</td>
-              <td className="expireData">jfalkfçdj</td>
-              <td className="status">jfalkfçdj</td>
-              <td className="action">jfalkfçdj</td>
-            </tr>
+              { clients.map(client => {
+                  return (
+                    <tr key={client.id} onDoubleClick={handleTableDoubleClick}>
+                      <td className="name">{client.name}</td>
+                      <td className="birthdate">{client.birthdate}</td>
+                      <td className="cpf">{client.cpf}</td>
+                      <td className="phonenumber">{client.phonenumber}</td>
+                      <td className="expiredate">{client.expiredate}</td>
+                      <td className="status">{client.status}</td>
+                      <td className="action">Sem ação</td>
+                    </tr>
+                  )
+                }) 
+              }
           </tbody>
           <tfoot>
             <tr>
               <td colSpan="7">
-                <ul class="pagination">
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
+                <ul className="pagination">
+                  <li><a href="/">1</a></li>
+                  <li><a href="/">2</a></li>
+                  <li><a href="/">3</a></li>
+                  <li><a href="/">4</a></li>
+                  <li><a href="/">5</a></li>
                 </ul>
               </td>
             </tr>
           </tfoot>
         </table>
-      {/* </div> */}
     </>
   )
 }

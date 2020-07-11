@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, useHistory } from 'react-router-dom'
 import './styles.css'
 
 export default function Client() {
@@ -21,8 +20,8 @@ export default function Client() {
               <input id="name" />
             </div>
             <div className="field">
-              <label htmlFor="birthDate">Data de Nascimento</label>
-              <input id="birthDate" />
+              <label htmlFor="birthdate">Data de Nascimento</label>
+              <input id="birthdate" />
             </div>
           </div>
 
@@ -50,8 +49,8 @@ export default function Client() {
               <input id="cellphone" />
             </div>
             <div className="field">
-              <label htmlFor="phone">Telefone</label>
-              <input id="phone" />
+              <label htmlFor="phonenumber">Telefone</label>
+              <input id="phonenumber" />
             </div>
             <div className="field">
               <label htmlFor="comercialPhone">Telefone Comercial</label>

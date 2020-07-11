@@ -18,16 +18,16 @@ export default function Routes() {
       <Router>
         <div className="page">
           <Section />
-          <Switch>
-            <div className="main-page">
+          <div className="main-page">
+            <Switch>
               <Route path="/painel-geral" component={Home} />
               <Route path="/" exact component={Logon} />
               <Route path="/vendas" component={Sales} />
 
               <Route path="/clientes" component={ClientList} />
               <Route path="/cadastro-cliente" component={Client} />
-            </div>
-          </Switch>
+            </Switch>
+          </div>
         </div>
       </Router>
     </>

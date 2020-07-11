@@ -8,7 +8,7 @@ export default function Select(props) {
   }
 
   return (
-    <div class="custom-select" style={{ width: 200 }}>
+    <div className="custom-select" style={{ width: 200 }}>
       <select>
 
         <option value="0">Select car:</option>
