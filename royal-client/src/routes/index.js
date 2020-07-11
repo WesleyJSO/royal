@@ -22,7 +22,7 @@ export default function Routes() {
             <div className="main-page">
               <Route path="/painel-geral" component={Home} />
               <Route path="/" exact component={Logon} />
-              <Route path="/Sales" component={Sales} />
+              <Route path="/vendas" component={Sales} />
 
               <Route path="/clientes" component={ClientList} />
               <Route path="/cadastro-cliente" component={Client} />

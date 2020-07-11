@@ -31,185 +31,199 @@ export default function ClientList() {
   return (
     <>
       <h1>Clientes</h1>
-      <div className="card">
+      <div className="card" style={{width: '87%'}}>
         <form>
-          <div>
+          <div className="border">
             <div className="header">Busca</div>
               <div className="form-group">
                 <div className="field">
-                  <label for="name">Nome</label>
+                  <label htmlFor="name">Nome</label>
                   <input id="name" onKeyUp={handleKeyUp} />
                 </div>
                 <div className="field">
-                  <label for="cpf">CPF</label>
+                  <label htmlFor="cpf">CPF</label>
                   <input id="cpf" onKeyUp={handleKeyUp} />
                 </div>
                 <div className="field">
-                  <label for="cardNumber">Número do Cartão</label>
+                  <label htmlFor="cardNumber">Número do Cartão</label>
                   <input id="cardNumber" onKeyUp={handleKeyUp} />
                 </div>
                 <div className="field">
-                  <label for="status">Status</label>
+                  <label htmlFor="status">Status</label>
                   <input id="status" onKeyUp={handleKeyUp} />
                 </div>
+              </div>
               </div>
               <div className="align-right">
                 <button className="btn-info no-margin-right" onClick={handleClick}>Novo</button>
               </div>
-          </div>
         </form>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Data Nascimento</th>
-            <th>CPF</th>
-            <th>Telefone</th>
-            <th>Data de Vencimento</th>
-            <th>Status</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="name">jose</td>
-            <td className="birthDate">maria</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">maria jose</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">maria jose</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">maria jose</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">maria cintia</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">cintia maria</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">jfalkfçdj</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">jfalkfçdj</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">jfalkfçdj</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">jfalkfçdj</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">jfalkfçdj</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">jfalkfçdj</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">jfalkfçdj</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">jfalkfçdj</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">jfalkfçdj</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">jfalkfçdj</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-          <tr>
-            <td className="name">jfalkfçdj</td>
-            <td className="birthDate">jfalkfçdj</td>
-            <td className="cpf">jfalkfçdj</td>
-            <td className="phone">jfalkfçdj</td>
-            <td className="expireData">jfalkfçdj</td>
-            <td className="status">jfalkfçdj</td>
-            <td className="action">jfalkfçdj</td>
-          </tr>
-        </tbody>
-        <tfoot></tfoot>
-      </table>
+      {/* <div class="table"> */}
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Data Nascimento</th>
+              <th>CPF</th>
+              <th>Telefone</th>
+              <th>Data de Vencimento</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="name">jose</td>
+              <td className="birthDate">maria</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">maria jose</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">maria jose</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">maria jose</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">maria cintia</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">cintia maria</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">jfalkfçdj</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">jfalkfçdj</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">jfalkfçdj</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">jfalkfçdj</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">jfalkfçdj</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">jfalkfçdj</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">jfalkfçdj</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">jfalkfçdj</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">jfalkfçdj</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">jfalkfçdj</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+            <tr>
+              <td className="name">jfalkfçdj</td>
+              <td className="birthDate">jfalkfçdj</td>
+              <td className="cpf">jfalkfçdj</td>
+              <td className="phone">jfalkfçdj</td>
+              <td className="expireData">jfalkfçdj</td>
+              <td className="status">jfalkfçdj</td>
+              <td className="action">jfalkfçdj</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colSpan="7">
+                <ul class="pagination">
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                </ul>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      {/* </div> */}
     </>
   )
 }

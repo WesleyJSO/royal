@@ -9,11 +9,11 @@ export default function Logon() {
       <div className="card">
         <form>
           <div className="field">
-            <label for="name">Nome</label>
+            <label htmlFor="name">Nome</label>
             <input id="name" />
           </div>
           <div className="field">
-            <label for="password">Senha</label>
+            <label htmlFor="password">Senha</label>
             <input id="password" type="password"/>
           </div>
           <div>

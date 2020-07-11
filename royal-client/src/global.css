@@ -13,6 +13,16 @@
 	width: 100%;
 }
 
+header {
+  height: 25px;
+  display: flex;
+  padding: 20px;
+  color: white;
+  background-color: rgba(16, 38, 102, 1);
+  /* background: linear-gradient(0.25turn, rgba(65, 105, 225, 1), rgba(39, 154, 241, 1), rgba(65, 105, 225, 1)); */
+  /* box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25); */
+}
+
 li {	
   list-style-type: none;
 }
@@ -32,7 +42,7 @@ body {
 	background-color: rgba(237, 236, 235, 1);
 }
 
-input, textarea {
+input {
   transition: all 0.2s ease;
 }
 
@@ -40,18 +50,27 @@ input:hover, textarea:hover {
 	border: 1px solid rgba(39, 154, 241, 1);
 }
 
-input:focus {
+input:focus, textarea:focus {
 	border: 1px solid rgba(65, 105, 225, 1);
 	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-input {
-	width: 95%;
-	margin: 3px 8px 8px 0px;
-	padding: 8px 0px 8px 8px;
+input, textarea {
+	width: 100%;	
+	margin: 0px 0px 10px 0px;
+	padding: 10px 5px;
 	color: #333;
 	border-radius: 2px;
 	border: 1px solid #dcdce6;
+}
+
+.select-option {
+	border-radius: 2px;
+	width: 100%;	
+}
+
+textarea {
+	resize: vertical;
 }
 
 button {
@@ -84,7 +103,13 @@ label {
 	border-radius: 2px;
 	width: fit-content;
 	background-color: #fdfdfd;
+	background: rgb(250,250,250);
 	box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2)
+}
+
+.card .border .header {
+	padding: 8px;
+	background: rgba(227, 225, 222, 1);
 }
 
 .no-margin-left {
@@ -105,38 +130,32 @@ label {
 .field {
 	width: 100%;
 	margin: 5px;
+	padding: 0px 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 }
 
 table {
-	width: 90%;
-	margin: 20px;
+	width: 100%;
 	border-collapse: collapse;
 	background-color: #fdfdfd;
 }
+
+thead > th { position: fixed; }
+
 thead {
 	text-align: center;
 }
 tbody {
 	text-align: left;
 }
-th, td {
-	padding: 10px;
-}
-th {
-	border-bottom: 1px solid white;
-	background-color: rgb(16, 38, 102);
-	color: rgb(237, 236, 235);
-}
 tr:nth-child(odd) {
 	background-color: rgba(227, 225, 222, 1);
 }
 tr:nth-child(even) {
-	background-color: white;
+	background: rgb(250,250,250);
 }
-
 tr {	
 	transition: all 0.1s ease;
 }
@@ -144,3 +163,24 @@ tr:hover {
 	background-color: rgb(16, 38, 102);
 	color: rgb(237, 236, 235);
 }
+th, tfoot > tr > td {
+	border-bottom: 1px solid white;
+	background-color: rgb(16, 38, 102);
+	color: rgb(237, 236, 235);
+}
+
+th { width: calc(100% / 8); }
+td { width: calc(100%/6); }
+th, td, tfoot tr { padding: 10px; }
+
+table tbody, table thead { display: block; }
+
+table tbody {
+	 overflow: auto;
+	 max-height: 50vh;
+}
+
+table { width: 90%; }
+a { color: white; }
+
+a:hover { color: grey; }

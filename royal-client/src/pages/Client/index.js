@@ -13,30 +13,30 @@ export default function Client() {
           <div className="header">Dados Pessoais</div>
           <div className="form-group">
             <div className="field">
-              <label for="cpf">CPF</label>
+              <label htmlFor="cpf">CPF</label>
               <input id="cpf" />
             </div>
             <div className="field">
-              <label for="name">Nome</label>
+              <label htmlFor="name">Nome</label>
               <input id="name" />
             </div>
             <div className="field">
-              <label for="birthDate">Data de Nascimento</label>
+              <label htmlFor="birthDate">Data de Nascimento</label>
               <input id="birthDate" />
             </div>
           </div>
 
           <div className="form-group">
             <div className="field">
-              <label for="gender">Genero</label>
+              <label htmlFor="gender">Genero</label>
               <input id="gender" />
             </div>
             <div className="field">
-              <label for="martianStatus">Estado Civil</label>
+              <label htmlFor="martianStatus">Estado Civil</label>
               <input id="martianStatus" />
             </div>
             <div className="field">
-              <label for="email">E-mail</label>
+              <label htmlFor="email">E-mail</label>
               <input id="email" />
             </div>
           </div>
@@ -46,19 +46,19 @@ export default function Client() {
           <div className="header">Contato</div>
           <div className="form-group">
             <div className="field">
-              <label for="cellphone">Celular</label>
+              <label htmlFor="cellphone">Celular</label>
               <input id="cellphone" />
             </div>
             <div className="field">
-              <label for="phone">Telefone</label>
+              <label htmlFor="phone">Telefone</label>
               <input id="phone" />
             </div>
             <div className="field">
-              <label for="comercialPhone">Telefone Comercial</label>
+              <label htmlFor="comercialPhone">Telefone Comercial</label>
               <input id="comercialPhone" />
             </div>
             <div className="field">
-              <label for="contactPhone">Telefone de Contato</label>
+              <label htmlFor="contactPhone">Telefone de Contato</label>
               <input id="contactPhone" />
             </div>
           </div>
@@ -68,38 +68,38 @@ export default function Client() {
           <div className="header">Endereço</div>
           <div className="form-group">
             <div className="field">
-              <label for="cep">CEP</label>
+              <label htmlFor="cep">CEP</label>
               <input id="cep" />
             </div>
             <div className="field">
-              <label for="address">Endereço</label>
+              <label htmlFor="address">Endereço</label>
               <input id="address" />
             </div>
             <div className="field">
-              <label for="addressNumber">Número</label>
+              <label htmlFor="addressNumber">Número</label>
               <input id="addressNumber" />
             </div>        
             <div className="field">
-              <label for="complement">Complemento</label>
+              <label htmlFor="complement">Complemento</label>
               <input id="complement" />
             </div>
           </div>
 
           <div className="form-group">
             <div className="field">
-              <label for="neighborhood">Bairro</label>
+              <label htmlFor="neighborhood">Bairro</label>
               <input id="neighborhood" />
             </div>
             <div className="field">
-              <label for="state">Estado</label>
+              <label htmlFor="state">Estado</label>
               <input id="state" />
             </div>
             <div className="field">
-              <label for="city">Cidade</label>
+              <label htmlFor="city">Cidade</label>
               <input id="city" />
             </div>
             <div className="field">
-              <label for="recomendation">Indicação</label>
+              <label htmlFor="recomendation">Indicação</label>
               <input id="recomendation" />
             </div>
           </div>
@@ -109,15 +109,15 @@ export default function Client() {
           <div className="header">Cliente Pessoa Jurídica</div>
           <div className="form-group">
             <div className="field">
-              <label for="cnpj">CNPJ</label>
+              <label htmlFor="cnpj">CNPJ</label>
               <input id="cnpj" />
             </div>
             <div className="field">
-              <label for="companyName">Nome Fantasia</label>
+              <label htmlFor="companyName">Nome Fantasia</label>
               <input id="companyName" />
             </div>
             <div className="field">
-              <label for="socialName">Razão Social</label>
+              <label htmlFor="socialName">Razão Social</label>
               <input id="socialName" />
             </div>
           </div>

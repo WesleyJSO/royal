@@ -1,15 +1,20 @@
 .form-group {
+  padding: 0px 15px;
   display: flex;
-}
-
-.header {
-  padding: 5px;
-	text-transform: uppercase;
-  font: 600 14px Montserrat, sans-serif;
-  background-color: rgba(237, 236, 235, 1);
 }
 
 .border {
   margin: 5px 0px 15px 0px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a {
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
 }
