@@ -6,6 +6,6 @@ const ClientController = require(`./controllers/ClientController`)
 
 const routes = express.Router()
 
-routes.get(`/cliente`, ClientController.get) // ClientValidation.get(),
+routes.get(`/client`, ClientController.get) // ClientValidation.get(),
 
 module.exports = routes

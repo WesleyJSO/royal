@@ -12,31 +12,35 @@ export default function ClientList() {
 
   const [clients, setClients] = useState([])
   const [name, setName] = useState(``)
-  const [cpf, setCpf] = useState(``)
+  const [cgccpf, setCgccpf] = useState(``)
   const [cardnumber, setCardnumber] = useState(``)
   const [status, setStatus] = useState(``)
 
   const handleNameChange = event => setName(event.target.value)
-  const handleCpfChange = event => setCpf(event.target.value)
+  const handleCpfChange = event => setCgccpf(event.target.value)
   const handleCardnumberChange = event => setCardnumber(event.target.value)
   const handleStatusChange = event => setStatus(event.target.value)
 
   useEffect(() => {
     async function fetchData() {
-      const clients = await api.get(`cliente`)
-      setClients(clients.data)
+      const response = await api.get(`client`)
+      setClients(response.data)
     }
     fetchData()
-  }, [])
+  })
 
   const handleTableDoubleClick = event => {
     event.preventDefault()
-    // TODO enviar também os dados (id para nova consulta) do cliente para edição
-    history.push('/cadastro-cliente')
+    history.push(`/cadastro-cliente/${event.target.parentElement.getAttribute(`tr-key`)}`)
   }
   const handleButtonClick = event => {
     event.preventDefault()
-    history.push('/cadastro-cliente')
+    history.push(`/cadastro-cliente`)
+  }
+
+  const handleNewSaleClick = event => {
+    event.preventDefault()
+    history.push(`/cadastro-venda/${event.target.parentElement.parentElement.getAttribute(`tr-key`)}`)
   }
 
   const handleKeyUp = event => {
@@ -76,10 +80,10 @@ export default function ClientList() {
                   />
                 </div>
                 <div className="field">
-                  <label htmlFor="cpf">CPF</label>
+                  <label htmlFor="cgccpf">CPF</label>
                   <input 
-                    id="cpf" 
-                    value={cpf}
+                    id="cgccpf" 
+                    value={cgccpf}
                     onChange={handleCpfChange}
                     onKeyUp={handleKeyUp}
                   />
@@ -123,20 +127,26 @@ export default function ClientList() {
               <th>Telefone</th>
               <th>Data de Vencimento</th>
               <th>Status</th>
-              <th>Ações</th>
+              <th style={{padding: `0px 50px`}}>Ações</th>
             </tr>
           </thead>
           <tbody>
               { clients.map(client => {
                   return (
-                    <tr key={client.id} onDoubleClick={handleTableDoubleClick}>
+                    <tr key={client.id} tr-key={client.id} onDoubleClick={handleTableDoubleClick}>
                       <td className="name">{client.name}</td>
                       <td className="birthdate">{client.birthdate}</td>
-                      <td className="cpf">{client.cpf}</td>
+                      <td className="cgccpf">{client.cgccpf}</td>
                       <td className="phonenumber">{client.phonenumber}</td>
                       <td className="expiredate">{client.expiredate}</td>
                       <td className="status">{client.status}</td>
-                      <td className="action">Sem ação</td>
+                      <td className="action">
+                        <button 
+                          type="button" 
+                          className="btn-info" 
+                          style={{width: 120, boxShadow: `none` }}
+                          onClick={handleNewSaleClick}>Nova Venda</button>
+                      </td>
                     </tr>
                   )
                 }) 

@@ -56,6 +56,8 @@ button {
 	text-transform: uppercase;
 	color: rgba(237, 236, 235, 1);
 	box-shadow: 0px 0px 10px 2px;
+	word-wrap: normal;
+	word-break: keep-all;
 }
 header {
 	height: 25px;
@@ -92,8 +94,8 @@ thead, tbody { text-align: center; }
 th, tfoot > tr > td { border-bottom: 1px solid white; background-color: rgb(16, 38, 102); color: rgb(237, 236, 235); }
 th { width: calc(100% / 6); }
 td { width: calc(100%/6); }
+tfoot tr { border-top: 1px solid white; }
 th, td, tfoot tr { padding: 10px; }
-
 
 /* events */
 tr:nth-child(odd) { background-color: rgba(227, 225, 222, 1); }

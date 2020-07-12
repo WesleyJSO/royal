@@ -1,0 +1,8 @@
+.interactive-label {
+  color: rgb(209, 209, 209);
+  cursor: pointer;
+}
+
+.interactive-label:hover {
+  color: black;
+}

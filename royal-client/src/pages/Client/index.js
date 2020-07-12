@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import api from '../../services'
+
 import './styles.css'
 
-export default function Client() {
+export default function Client(props) {
+  
+  const [client, setClient] = useState({})
+  
+  useEffect(function() {
+    const fetchData = async () => {
+      const response = await api.get(`client?id=${props.match.params.id}`)
+      setClient(response.data[0])
+    }
+    fetchData()
+  }, [props])
 
   return (
     <>
@@ -12,31 +24,49 @@ export default function Client() {
           <div className="header">Dados Pessoais</div>
           <div className="form-group">
             <div className="field">
-              <label htmlFor="cpf">CPF</label>
-              <input id="cpf" />
+              <label htmlFor="cgccpf">CPF</label>
+              <input 
+                id="cgccpf" 
+                value={client.cgccpf} 
+              />
             </div>
             <div className="field">
               <label htmlFor="name">Nome</label>
-              <input id="name" />
+              <input 
+                id="name" 
+                value={client.name} 
+              />
             </div>
             <div className="field">
               <label htmlFor="birthdate">Data de Nascimento</label>
-              <input id="birthdate" />
+              <input 
+                id="birthdate" 
+                value={client.birthdate} 
+              />
             </div>
           </div>
 
           <div className="form-group">
             <div className="field">
               <label htmlFor="gender">Genero</label>
-              <input id="gender" />
+              <input 
+                id="gender" 
+                value={client.gender}    
+              />
             </div>
             <div className="field">
               <label htmlFor="martianStatus">Estado Civil</label>
-              <input id="martianStatus" />
+              <input 
+                id="martianStatus" 
+                value={client.martianstatus}    
+              />
             </div>
             <div className="field">
               <label htmlFor="email">E-mail</label>
-              <input id="email" />
+              <input 
+                id="email" 
+                value={client.email}    
+              />
             </div>
           </div>
         </div>
@@ -46,19 +76,31 @@ export default function Client() {
           <div className="form-group">
             <div className="field">
               <label htmlFor="cellphone">Celular</label>
-              <input id="cellphone" />
+              <input 
+                id="cellphone" 
+                value={client.cellphone}
+              />
             </div>
             <div className="field">
               <label htmlFor="phonenumber">Telefone</label>
-              <input id="phonenumber" />
+              <input 
+                id="phonenumber" 
+                value={client.phonenumber}
+              />
             </div>
             <div className="field">
-              <label htmlFor="comercialPhone">Telefone Comercial</label>
-              <input id="comercialPhone" />
+              <label htmlFor="comercialphone">Telefone Comercial</label>
+              <input 
+                id="comercialphone" 
+                value={client.comercialphone}
+              />
             </div>
             <div className="field">
-              <label htmlFor="contactPhone">Telefone de Contato</label>
-              <input id="contactPhone" />
+              <label htmlFor="contactphone">Telefone de Contato</label>
+              <input 
+                id="contactphone" 
+                value={client.contactphone}
+              />
             </div>
           </div>
         </div>
@@ -68,38 +110,62 @@ export default function Client() {
           <div className="form-group">
             <div className="field">
               <label htmlFor="cep">CEP</label>
-              <input id="cep" />
+              <input 
+                id="cep" 
+                value={client.cep}
+              />
             </div>
             <div className="field">
               <label htmlFor="address">Endereço</label>
-              <input id="address" />
+              <input 
+                id="address" 
+                value={client.address}
+              />
             </div>
             <div className="field">
-              <label htmlFor="addressNumber">Número</label>
-              <input id="addressNumber" />
+              <label htmlFor="addressnumber">Número</label>
+              <input 
+                id="addressnumber" 
+                value={client.addressnumber}
+              />
             </div>        
             <div className="field">
               <label htmlFor="complement">Complemento</label>
-              <input id="complement" />
+              <input 
+                id="complement" 
+                value={client.complement}
+              />
             </div>
           </div>
 
           <div className="form-group">
             <div className="field">
               <label htmlFor="neighborhood">Bairro</label>
-              <input id="neighborhood" />
+              <input 
+                id="neighborhood" 
+                value={client.neighborhood}
+              />
             </div>
             <div className="field">
               <label htmlFor="state">Estado</label>
-              <input id="state" />
+              <input 
+                id="state" 
+                value={client.state}
+              />
             </div>
             <div className="field">
               <label htmlFor="city">Cidade</label>
-              <input id="city" />
+              <input 
+                id="city" 
+                value={client.city}
+              />
             </div>
             <div className="field">
               <label htmlFor="recomendation">Indicação</label>
-              <input id="recomendation" />
+              <input 
+                id="recomendation" 
+                value={client.recomendation}
+              />
             </div>
           </div>
         </div>
@@ -109,15 +175,24 @@ export default function Client() {
           <div className="form-group">
             <div className="field">
               <label htmlFor="cnpj">CNPJ</label>
-              <input id="cnpj" />
+              <input 
+                id="cnpj" 
+                value={client.cnpj}
+              />
             </div>
             <div className="field">
-              <label htmlFor="companyName">Nome Fantasia</label>
-              <input id="companyName" />
+              <label htmlFor="companyname">Nome Fantasia</label>
+              <input 
+                id="companyname" 
+                value={client.companyname}
+              />
             </div>
             <div className="field">
-              <label htmlFor="socialName">Razão Social</label>
-              <input id="socialName" />
+              <label htmlFor="socialname">Razão Social</label>
+              <input 
+                id="socialname" 
+                value={client.socialname}
+              />
             </div>
           </div>
         </div>
