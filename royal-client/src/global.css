@@ -38,6 +38,8 @@
 .no-margin-right { margin: 5px 0px 5px 5px; }
 .select-option { border-radius: 2px; width: 100%;	}
 
+small.error { color: red; }
+
 /* tags */
 a { color: white; }
 body {
@@ -76,7 +78,7 @@ hr {
 input { transition: all 0.2s ease; }
 input, textarea {
 	width: 100%;	
-	margin: 0px 0px 10px 0px;
+	margin: 0px 0px 5px 0px;
 	padding: 10px 5px;
 	color: #333;
 	border-radius: 2px;
@@ -84,6 +86,7 @@ input, textarea {
 }
 label { margin: 5px 0px; }
 li { list-style-type: none; }
+small { color: blue; font: 500 9px Montserrat, sans-serif; text-transform: uppercase; }
 table { width: 90%; border-collapse: collapse; background-color: #fdfdfd; }
 table tbody { overflow: auto; max-height: 50vh; }
 table tbody, table thead { display: block; }
@@ -96,6 +99,7 @@ th { width: calc(100% / 6); }
 td { width: calc(100%/6); }
 tfoot tr { border-top: 1px solid white; }
 th, td, tfoot tr { padding: 10px; }
+
 
 /* events */
 tr:nth-child(odd) { background-color: rgba(227, 225, 222, 1); }

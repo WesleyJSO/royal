@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react'
-import api from '../../services'
+import service from '../../services'
 
 import './styles.css'
 
 export default function Client(props) {
   
+  const clientService = service(`client`)
+
   const [client, setClient] = useState({})
   
   useEffect(function() {
     const fetchData = async () => {
-      const response = await api.get(`client?id=${props.match.params.id}`)
+      const response = await clientService.get(props.match.params.id)
       setClient(response.data[0])
     }
     fetchData()
-  }, [props])
+  }, [clientService, props.match.params.id])
 
   return (
     <>
